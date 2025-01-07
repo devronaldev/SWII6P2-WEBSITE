@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>SWII6P2_WEBSITE</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\UserAuthController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SWII6P2Verifications">
+      <HintPath>..\..\SWII6P2Verifications\SWII6P2Verifications\bin\Debug\net8.0\SWII6P2Verifications.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,40 @@
+﻿@model List<Product>
+
+@{
+    ViewBag.Title = "Lista de Produtos";
+}
+
+<h1>Lista de Produtos</h1>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Status</th>
+                <th>ID do Registro</th>
+                <th>ID do Último Atualizador</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.Price.ToString("C")</td> <!-- Formatação de preço -->
+                    <td>@(product.Status ? "Ativo" : "Inativo")</td> <!-- Exibindo o Status -->
+                    <td>@product.RecordId</td>
+                    <td>@product.LastUpdaterId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhum produto encontrado.</p>
+}
